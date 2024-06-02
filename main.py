@@ -69,7 +69,7 @@ def create_data_stream_and_sink_back(topic):
     ) \
     .map(lambda x: (0, float(x)), output_type=Types.TUPLE([Types.INT(), Types.FLOAT()])) \
     .key_by(lambda x: x[0]) \
-    .window(SlidingProcessingTimeWindows.of(Time.minutes(5), Time.seconds(10))) \
+    .window(SlidingProcessingTimeWindows.of(Time.minutes(5), Time.seconds(30))) \
 
 
     kafka_producer = get_kafka_producer(topic, 'average')
