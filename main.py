@@ -71,7 +71,6 @@ def create_data_stream_and_sink_back(topic):
     .key_by(lambda x: x[0]) \
     .window(SlidingProcessingTimeWindows.of(Time.minutes(5), Time.seconds(30))) \
 
-
     kafka_producer = get_kafka_producer(topic, 'average')
     data_stream.process(AverageProcessWindowFunction(), Types.STRING()).add_sink(kafka_producer)
 
