@@ -1,8 +1,6 @@
 from pyflink.datastream.connectors.kafka import FlinkKafkaConsumer, FlinkKafkaProducer
 from pyflink.common.typeinfo import Types
 from pyflink.datastream import StreamExecutionEnvironment, ProcessWindowFunction
-from pyflink.table.expressions import col, lit
-from pyflink.table import StreamTableEnvironment
 from pyflink.datastream.window import TimeWindow, TumblingProcessingTimeWindows, SlidingProcessingTimeWindows
 from pyflink.common.time import Time
 from pyflink.common import Configuration, WatermarkStrategy
